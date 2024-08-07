@@ -1,0 +1,36 @@
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.input-status {
+  border: none;
+  margin-left: 8px;
+  margin-right: 10px;
+  vertical-align: middle;
+  font-size: 16px;
+  width: 220px;
+}
+
+.button-tweet {
+  font-size: 16px;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  background-color: rgb(61, 187, 241);
+  color: white;
+  font-weight: bold;
+  border-radius: 16px;
+}
+
+.div-block {
+  border: 1px solid rgb(187, 185, 185);
+  border-radius: 6px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 400px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}

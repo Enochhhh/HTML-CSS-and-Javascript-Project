@@ -1,0 +1,19 @@
+.search-bar {
+  width: 500px;
+  box-shadow: 5px 5px 10px rgba(157, 153, 153, 0.4);
+  border-color: rgba(157, 153, 153);
+  border-width: 0.5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 250px;
+}
+
+.image {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+div {
+  text-align: center;
+}

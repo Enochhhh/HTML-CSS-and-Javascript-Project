@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>13a Practice</title>
+    <style>
+      .body {
+        font-family: Arial;
+        font-size: 16px;
+      }
+      .flex-box-1 {
+        display: flex;
+        width: 300px;
+      }
+      .flex-box-2 {
+        width: 200px;
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;  
+      }
+      .item {
+        width: 100px;
+        background-color: lightpink;
+      }
+      .item-nested {
+        background-color: black;
+        color: white;
+      }
+      .flex-box-3 {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-box-1">
+      <div class="item">
+      </div>
+      <div class="flex-box-2">
+        <div>row1</div>
+        <div class="flex-box-3">
+          <div class="item-nested">item1</div>
+          <div class="item-nested">item1</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
