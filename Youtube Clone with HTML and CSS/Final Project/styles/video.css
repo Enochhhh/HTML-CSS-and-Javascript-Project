@@ -4,9 +4,21 @@
 
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 16px;
   row-gap: 40px;
+}
+
+@media (max-width:868px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1125px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .video-title {
@@ -15,6 +27,12 @@
   font-weight: 500;
   line-height: 20px;
   margin-bottom: 10px;
+}
+
+.video-link {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .video-info-grid {
@@ -33,7 +51,6 @@
 }
 
 .video-time {
-  font-family: Roboto, Arial;
   font-size: 12px;
   font-weight: 500;
   position: absolute;
@@ -53,4 +70,72 @@
 
 .video-author {
   margin-bottom: 4px;
+}
+
+.channel-picture {
+  position: relative;
+  height: 65px;
+}
+
+.channel-picture .tooltip {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  padding: 14px 14px 14px 14px;
+  background-color: white;
+  border: 1px solid rgb(215, 215, 215);
+  width: 230px;
+  column-gap: 10px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  left: 0;
+  bottom: -70px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.channel-picture:hover .tooltip {
+  opacity: 1;
+}
+
+.channel-picture .tooltip .profile-picture {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+}
+
+.channel-picture .tooltip .profile-picture img {
+  width: 60px;
+  border-radius: 30px;
+}
+
+.channel-picture .tooltip .info-tooltip {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 6px;
+}
+
+.name-owner {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.subscribers {
+  color: gray;
+}
+
+@media (min-width: 1000px) {
+  .video-info {
+    font-size: 14px;
+  }
+  .video-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
