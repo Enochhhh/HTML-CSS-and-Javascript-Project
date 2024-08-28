@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>11 Exercises Practice</title>
+  </head>
+  <body>
+    <script>
+      let values = [10, 20, 30];
+      // Exercise 11a
+      console.log(`>>> *** Exercise 11a ***<<<`);
+      console.log(`Array before change: ${values}`);
+
+      values[2] = 99;
+      console.log(`Array after change: ${values}`);
+
+      //Exercise 11b
+      console.log(`>>> *** Exercise 11b ***<<<`);
+      values = [1, 20, 22, 24, 5];
+      console.log(getLastValue(values));
+      values = ['hi', 'hello', 'good'];
+      console.log(getLastValue(values));
+
+      function getLastValue(array) {
+        return array[array.length - 1];
+      }
+
+      //Exercise 11c
+      console.log(`>>> *** Exercise 11c ***<<<`);
+      values = [1, 20, 22, 24, 5];
+      console.log(`Arrays before swapping: ${values}`);
+      arraySwap(values);
+      console.log(`Arrays after swapping: ${values}`);
+
+      values = ['hi', 'hello', 'good'];
+      console.log(`Arrays before swapping: ${values}`);
+      arraySwap(values);
+      console.log(`Arrays after swapping: ${values}`);
+
+      function arraySwap(array) {
+        let temp = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = temp;
+      }
+
+      //Exercise 11d
+      console.log(`>>> *** Exercise 11d ***<<<`);
+      for (let i = 0; i <= 10; i += 2) {
+        console.log(i);
+      }
+
+      //Exercise 11e
+      console.log(`>>> *** Exercise 11e ***<<<`);
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+
+      //Exercise 11f
+      console.log(`>>> *** Exercise 11f ***<<<`);
+      console.log('Count up from 0 to 10, but count up by 2');
+      let i = 0;
+      while (i <= 10) {
+        console.log(i);
+        i += 2;
+      }
+
+      console.log('Count down from 5 to 0');
+      i = 5;
+      while (i >= 0) {
+        console.log(i);
+        i--;
+      }
+
+      //Exercise 11g
+      console.log(`>>> *** Exercise 11g ***<<<`);
+      values = [1, 2, 3];
+
+      const newValues = [];
+      for (let i = 0; i < values.length; i++) {
+        newValues.push(values[i] + 1);
+      }
+      console.log(`Old Arrays: ${values}`);
+      console.log(`New Arrays: ${newValues}`);
+
+      //Exercise 11h
+      console.log(`>>> *** Exercise 11h ***<<<`);
+      values = [1, 2, 3];
+      console.log(`Array before add one: ${values}`);
+      values = addOne(values);
+      console.log(`Array after add one: ${values}`);
+
+      values = [-2 , -1, 0, 99];
+      console.log(`Array before add one: ${values}`);
+      values = addOne(values);
+      console.log(`Array after add one: ${values}`);
+
+      function addOne(array) {
+        for (let i = 0; i < array.length; i++) {
+          array[i] += 1;
+        }
+        return array;
+      }
+
+      //Exercise 11i
+      console.log(`>>> *** Exercise 11i ***<<<`);
+      values = [1, 2, 3];
+      console.log(`Array before add num 2: ${values}`);
+      values = addNum(values, 2);
+      console.log(`Array after add num 2: ${values}`);
+
+      values = [-2 , -1, 0, 99];
+      console.log(`Array before add num 2: ${values}`);
+      values = addNum(values, 2);
+      console.log(`Array after add num 2: ${values}`);
+
+      function addNum(array, num) {
+        for (let i = 0; i < array.length; i++) {
+          array[i] += num;
+        }
+        return array;
+      }
+
+      //Exercise 11j
+      console.log(`>>> *** Exercise 11j ***<<<`);
+      values = [1, 1, 2];
+      let arrayData = [1, 1, 3]
+      console.log(`Array before add [${arrayData}]: ${values}`);
+      values = addArray(values, arrayData);
+      console.log(`Array after add [${arrayData}]: ${values}`);
+
+      values = [1 , 2, 3];
+      arrayData = [4, 5, 6]
+      console.log(`Array before add [${arrayData}]: ${values}`);
+      values = addArray(values, arrayData);
+      console.log(`Array after add [${arrayData}]: ${values}`);
+
+      function addArray(arrayRoot, arrayData) {
+        for (let i = 0; i < arrayRoot.length; i++) {
+          arrayRoot[i] += arrayData[i];
+        }
+        return arrayRoot;
+      }
+
+      //Exercise 11k
+      console.log(`>>> *** Exercise 11k ***<<<`);
+      values = [2, 3, -5, 7, 10];
+      let countValue = countPositive(values);
+      console.log(`Amount of numbers Positive in [${values}]: ${countValue}`);
+      function countPositive(array) {
+        // Use Accumulator Pattern
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] > 0) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+    </script>
+  </body>
+</html>

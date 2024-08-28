@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="
+      playGame('heads');
+      ">heads</button>
+    <button onclick="
+      playGame('tails');
+    ">tails</button>
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      localStorage.removeItem('score');
+    ">Reset Score</button>
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      function computerPickMove() {
+        const randomNumber = Math.random();
+        return randomNumber < 0.5 ? 'heads' : 'tails';
+      };
+
+      function playGame(userMove) {
+        const result = computerPickMove();
+        if (userMove === result) {
+          score.wins++;
+          console.log(`You win!\nWins: ${score.wins}, Losses: ${score.losses}`);
+        } else {
+          score.losses++;
+          console.log(`You lose!\nWins: ${score.wins}, Losses: ${score.losses}`);
+        }
+        localStorage.setItem('score', JSON.stringify(score));
+      };
+    </script>
+  </body>
+</html>

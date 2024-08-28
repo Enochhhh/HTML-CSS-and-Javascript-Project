@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>11-Part2-Exercises</title>
+  </head>
+  <body>
+    <script>
+      //Exercise 11o, 11p, 11q
+      console.log(`>>> *** Exercise 11o, 11p, 11q ***<<<`);
+      const strings = ['hello', 'world', 'search', 'good'];
+      // const strings = ['not', 'found'];
+      console.log(`The index of 'search' word: ${findIndex(strings, 'search')}`);
+
+      function findIndex(strings, stringFind) {
+        for (let i = 0; i < strings.length; i++) {
+          if (strings[i] === stringFind) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+      //Exercise 11r, 11s, 11t
+      console.log(`>>> *** Exercise 11r, 11s, 11t ***<<<`);
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log(`The foods after removing egg: ${removeEgg(foods)}`);
+
+      function removeEgg(foods) {
+        const result = [];
+        const tempFoods = foods.slice();
+        tempFoods.reverse();
+        console.log(`Temp Foods: ${tempFoods}`);
+        let totalEggRemoved = 0;
+        for (let i = 0; i < tempFoods.length; i++) {
+          if (tempFoods[i] === 'egg' && totalEggRemoved < 2) {
+            totalEggRemoved++;
+            console.log(totalEggRemoved);
+            console.log(tempFoods[i]);
+            continue;
+          }
+          result.push(tempFoods[i]);
+        }
+        console.log(`Result: ${result}`);
+        return result.reverse();
+      }
+    </script>
+  </body>
+</html>

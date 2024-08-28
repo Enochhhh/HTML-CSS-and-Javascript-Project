@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>11 Exercises Challenge Practice</title>
+  </head>
+  <body>
+    <script>
+      // Exercise 11l, 11m
+      console.log('>>> *** Exercise 11l, 11m ***<<<');
+      let values = [];
+      const minMaxObj = minMax(values);
+      console.log(minMaxObj);
+      console.log(`Min: ${minMaxObj.min}, Max: ${minMaxObj.max}`);
+
+      function minMax(array) {
+        if (array.length < 1) {
+          console.log(`Here`);
+          return {min: null, max: null};
+        }
+
+        let min = array[0];
+        let max = array[0];
+
+        for (let i = 1; i < array.length; i++) {
+          if (array[i] < min) {
+            min = array[i];
+          } else if (array[i] > max) {
+            max = array[i];
+          }
+        }
+        return {min, max};
+      }
+
+      // Exercise 11n
+      console.log('>>> *** Exercise 11n ***<<<');
+      values = ['apple', 'grape', 'apple', 'apple'];
+      const objectCountWords = countWords(values);
+      console.log(objectCountWords);
+
+      function countWords(array) {
+        const words = [];
+        const numberWords = [];
+
+        for (let i = 0; i < array.length; i++) {
+          let isExist = false;
+          let j = 0;
+          for (j = 0; j < words.length; j++) {
+            if (array[i] === words[j]) {
+              isExist = true;
+              break;
+            }
+          }
+
+          if (isExist) {
+            numberWords[j]++;
+          } else {
+            words.push(array[i]);
+            numberWords.push(1);
+          }
+        }
+
+        const objectResult = {};
+        for (let i = 0; i < words.length; i++) {
+          objectResult[`${words[i]}`] = numberWords[i]; 
+        }
+        return objectResult;
+      }
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+.request-button {
+  background-color: black;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.schedule-button {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: 700;
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 14px 24px;
+}

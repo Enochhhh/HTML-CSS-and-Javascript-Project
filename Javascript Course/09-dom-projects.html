@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <p>YouTuBe Subscribe Button</p>
+    <button class="js-subscribe-button" onclick="
+      subscribe();
+    ">Subscribe</button>
+
+    <script>
+      function subscribe() {
+        const subscribeButtonEM = document.querySelector('.js-subscribe-button');
+        if (subscribeButtonEM.innerText === 'Subscribe') {
+          subscribeButtonEM.innerText = 'Subscribed';
+        } else {
+          subscribeButtonEM.innerText = 'Subscribe';
+        }
+      }
+    </script>
+  </body>
+</html>

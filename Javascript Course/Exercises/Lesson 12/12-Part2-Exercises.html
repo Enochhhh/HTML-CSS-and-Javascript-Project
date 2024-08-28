@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>12-Exercises Practices</title>
+  </head>
+  <body>
+    
+
+    <script>
+      // Exercise 12j, 12k
+      console.log('>>> *** Exercise 12j, 12k ***<<<');
+      const multiply = (a, b) => a * b;
+      console.log(`Multiply 2 and 3: ${multiply(2, 3)}`);
+      console.log(`Multiply 5 and 7: ${multiply(5, 7)}`);
+
+      // Exercise 12l
+      console.log('>>> *** Exercise 12l ***<<<');
+      let nums = [1, -3, 5];
+      nums = [-2, 3, -5, 7, 10];
+      console.log(`Count Positive: ${countPositive(nums)}`);
+      function countPositive(nums) {
+        let count = 0;
+        nums.forEach(number => {
+          if (number > 0) {
+            count++;
+          }
+        });
+        return count;
+      }
+
+      // Exercise 12m
+      console.log('>>> *** Exercise 12m ***<<<');
+      nums = [-2, 3, -5, 7, 10];
+      console.log(`Add num: ${addNum(nums, 2)}`);
+      function addNum(array, num) {
+        return array.map(number => num * number);
+      }
+
+      // Exercise 12n
+      console.log('>>> *** Exercise 12n ***<<<');
+      let foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log(`Remove Egg: ${removeEgg(foods)}`);
+      function removeEgg(foods) {
+        return foods.filter(food => food !== 'egg');
+      }
+
+      // Exercise 12o
+      console.log('>>> *** Exercise 12o ***<<<');
+      foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log(`Remove Only 2 Egg: ${removeOnlyTwoEgg(foods)}`);
+      function removeOnlyTwoEgg(foods) {
+        let countEgg = 0;
+        return foods.filter(food => {
+          if (food === 'egg' && countEgg < 2) {
+            countEgg++;
+            return false;
+          }
+          return true;
+        });
+      }
+    </script>
+  </body>
+</html>

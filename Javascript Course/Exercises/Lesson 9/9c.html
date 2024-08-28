@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>9c Practice</title>
+  </head>
+  <body>
+    <button class="button-heads" onclick="
+      changeTextParagraph('heads');
+    ">heads</button>
+    <button class="button-tails" onclick="
+      changeTextParagraph('tails');
+    ">tails</button>
+    <p class="result-element"></p>
+    <script>
+      function changeTextParagraph(newText) {
+        document.querySelector('.result-element').innerHTML = `You choose: ${newText}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>9d, 9e , 9f Practice</title>
+  </head>
+  <body>
+    <input class="inputname-element" type="text" placeholder="Name" onkeydown="
+        if (event.key === 'Enter') {
+          showResult(document.querySelector('.inputname-element').value);
+        }
+      ">
+    <button class="submit-element" onclick="
+      showResult(document.querySelector('.inputname-element').value);
+    ">Submit</button>
+
+    <p class="result-element"></p>
+    <script>
+      function showResult(result) {
+        document.querySelector('.result-element').innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

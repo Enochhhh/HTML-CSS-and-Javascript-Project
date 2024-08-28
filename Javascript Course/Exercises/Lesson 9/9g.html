@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>9d, 9e , 9f Practice</title>
+  </head>
+  <body>
+    <input class="inputcost-element" type="text" placeholder="Cost" onkeydown="
+        if (event.key === 'Enter') {
+          showResult(document.querySelector('.inputcost-element').value);
+        }
+      ">
+    <button class="calculate-element" onclick="
+      showResult(document.querySelector('.inputcost-element').value);
+    ">Calculate</button>
+
+    <p class="result-element"></p>
+    <script>
+      function showResult(inputValue) {
+        let cost = Number(inputValue);
+        cost *= 100;
+        if (cost < 4000) {
+          cost += 1000;
+        }
+        document.querySelector('.result-element').innerHTML = `$${cost / 100}`;
+      }
+    </script>
+  </body>
+</html>

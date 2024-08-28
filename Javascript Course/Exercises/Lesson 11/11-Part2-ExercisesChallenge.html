@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>11-Part2-Exercises</title>
+  </head>
+  <body>
+    <script>
+      //Exercise 11v
+      console.log(`>>> *** Exercise 11v ***<<<`);
+      let stringsResult = '';
+      for (let i = 1; i <= 20; i++) {
+        if (i % 2 === 0 || i === 1) {
+          stringsResult += i + ' ';
+        } else if (i % 3 === 0 && i % 5 === 0) {
+          stringsResult += 'FizzBuzz' + ' ';
+        }
+        if (i % 3 === 0) {
+          stringsResult += 'Fizz' + ' ';
+        } else if (i % 5 === 0) {
+          stringsResult += 'Buzz' + ' ';
+        }
+      }
+      console.log(stringsResult);
+
+      //Exercise 11w
+      console.log(`>>> *** Exercise 11w ***<<<`);
+      // const strings = ['green', 'red', 'blue', 'red'];
+      const strings = ['red', 'green', 'green', 'red'];
+      console.log(`Unique Array: ${unique(strings)}`);
+
+      function findIndex(strings, stringFind) {
+        for (let i = 0; i < strings.length; i++) {
+          if (strings[i] === stringFind) {
+            return i;
+          }
+        }
+        return -1;
+      }
+
+      function unique(strings) {
+        const uniqueStrings = [];
+        for (let i = 0; i < strings.length; i++) {
+          if (findIndex(uniqueStrings, strings[i]) === -1) {
+            uniqueStrings.push(strings[i]);
+          }
+        }
+        return uniqueStrings;
+      }
+      
+    </script>
+  </body>
+</html>
