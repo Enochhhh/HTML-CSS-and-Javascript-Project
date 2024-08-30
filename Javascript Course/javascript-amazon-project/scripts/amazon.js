@@ -1,4 +1,10 @@
+import { cart, stillTimeOutArray, indexTimeOutArray, addToCart, calculateCartQuantity } from '../data/cart.js';
+import { products } from '../data/products.js';
+import { formatCurrency } from './utils/money.js';
+
 let productsHTML = '';
+
+updateCartQuantity();
 
 products.forEach(product => {
   productsHTML += `
@@ -21,7 +27,7 @@ products.forEach(product => {
       </div>
 
       <div class="product-price">
-        $${(product.priceCents / 100).toFixed(2)}
+        $${formatCurrency(product.priceCents)}
       </div>
 
       <div class="product-quantity-container">
@@ -56,11 +62,28 @@ products.forEach(product => {
 document.querySelector('.js-products-grid')
   .innerHTML = productsHTML;
 
-let isStillTimeOut;
-let indexTimeOut;
+function updateCartQuantity() {
+  const cartQuantity = calculateCartQuantity();
 
-let stillTimeOutArray = Array(products.length).fill().map(v => false);
-let indexTimeOutArray = Array(products.length).fill();
+  document.querySelector('.js-cart-quantity')
+    .innerHTML = cartQuantity;
+}
+
+function createTimeOutAddToCart(productId, i) {
+  if (stillTimeOutArray[i]) {
+    clearTimeout(indexTimeOutArray[i]);
+  }
+  stillTimeOutArray[i] = true;
+
+  indexTimeOutArray[i] = setTimeout(() => {
+    if (stillTimeOutArray[i]) {
+      clearTimeout(indexTimeOutArray[i]);
+    }
+    document.querySelector(`.js-added-to-cart-${productId}`)
+      .classList.remove('show-element');
+    stillTimeOutArray[i] = false;
+  }, 2000);
+}
 
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button, i) => {
@@ -70,43 +93,8 @@ document.querySelectorAll('.js-add-to-cart')
       document.querySelector(`.js-added-to-cart-${productId}`)
         .classList.add('show-element');
 
-      if (stillTimeOutArray[i]) {
-        clearTimeout(indexTimeOutArray[i]);
-      }
-      stillTimeOutArray[i] = true;
-
-      indexTimeOutArray[i] = setTimeout(() => {
-        if (stillTimeOutArray[i]) {
-          clearTimeout(indexTimeOutArray[i]);
-        }
-        document.querySelector(`.js-added-to-cart-${productId}`)
-          .classList.remove('show-element');
-        stillTimeOutArray[i] = false;
-      }, 2000);
-
-      let matchingItem;
-
-      cart.forEach(item => {
-        if (productId === item.productId) {
-          matchingItem = item;
-        }
-      });
-
-      if (matchingItem) {
-        matchingItem.quantity += quantity;
-      } else {
-        cart.push({
-          productId,
-          quantity
-        });
-      }
-
-      let cartQuantity = 0;
-
-      cart.forEach(item => {
-        cartQuantity += item.quantity;
-      });
-      document.querySelector('.js-cart-quantity')
-        .innerHTML = cartQuantity;
+      addToCart(productId, quantity);
+      updateCartQuantity();
+      createTimeOutAddToCart(productId, i);
     })
   });
