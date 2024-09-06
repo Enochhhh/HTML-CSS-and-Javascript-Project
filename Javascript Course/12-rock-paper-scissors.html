@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <title>Rock - Paper - Scissors Game</title>
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="styles/12-rock-paper-scissors.css">
   </head>
   <body>
@@ -23,12 +22,18 @@
     <p class="js-moves"></p>
     <p class="js-score score"></p>
 
-    <button class="reset-score-button js-reset-score-button">Reset Score</button>
+    <button onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+    " class="reset-score-button js-reset-score-button">Reset Score</button>
 
-    <button class="auto-play-button js-auto-play-button">Auto Play</button>
-
-    <script src="scripts/12-rock-paper-scissors.js">
-      
-    </script>
+    <button class="auto-play-button" onclick="
+      autoPlay();
+    ">Auto Play</button>
+    
+    <script src="scripts/12-rock-paper-scissors.js"></script>
   </body>
 </html>

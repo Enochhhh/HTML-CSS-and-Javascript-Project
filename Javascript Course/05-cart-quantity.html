@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <title>05 Cart Quantity</title>
-    <style></style>
+    <title>Cart Quantity</title>
   </head>
   <body>
-    <p>Cart Quantity</p>
     <button onclick="
       console.log(`Cart quantity: ${cartQuantity}`);
     ">Show Quantity</button>
 
     <button onclick="
-      cartQuantity = cartQuantity + 1;
+      cartQuantity++;
       console.log(`Cart quantity: ${cartQuantity}`);
     ">Add to Cart</button>
 
     <button onclick="
-      cartQuantity = cartQuantity + 2;
+      cartQuantity += 2;
       console.log(`Cart quantity: ${cartQuantity}`);
     ">+2</button>
 
@@ -34,7 +31,6 @@
 
     <script>
       let cartQuantity = 0;
-
     </script>
   </body>
 </html>
